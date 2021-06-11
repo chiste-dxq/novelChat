@@ -1,5 +1,5 @@
 <view class='ticket-container'>
-  <scroll-view scroll-y bindscrolltoupper="upper" bindscrolltolower="lower" bindscroll="scroll"
+  <scroll-view scroll-y bindscrolltoupper="upper" bindscrolltolower="lower" bindscroll="scroll" 
     scroll-into-view="{{toView}}" scroll-top="{{scrollTop}}">
     <!--Tab布局-->
     <view class='title'>
@@ -15,17 +15,19 @@
     <!--内容布局-->
     <swiper class='swiper' bindchange='pagechange' current='{{currentIndex}}'>
       <block wx:for="{{topNavs}}">
-        <swiper-item class='swiper'>
+        <swiper-item >
+          <block wx:for='{{item.novelListReqVo}}'>
           <view class='record-item'>
-            <view class='name'>
-                <span class='cover' id='{{item.id}}'></span>
+              <view class='name'>
+                <span class='cover' id='{{item.id}}'><image src='{{item.img}}' ></image></span>
                 <view class='item'>
-                  <span class='title'>{{item.catName}}</span>
+                  <span class='title' bindtap='intoNovel' data-id='{{item.id}}'>{{item.title}}</span>
                   <text class='introduction'>{{item.introduction}}</text>
                   <span class='auditor'>作者：{{item.auditor}}</span>
                 </view>
-            </view>
+              </view>
           </view>
+        </block>
         </swiper-item>
       </block>
     </swiper>
