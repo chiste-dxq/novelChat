@@ -21,7 +21,6 @@ Page({
       data: { //请求参数，没有参数可以为空 
       },
       success: function (res) {
-        console.log(res)//接口返回值
         that.setData({
           topNavs: res.data.data
         })
@@ -53,12 +52,8 @@ Page({
     })
   },
   intoNovel: function (e){
-    wx.createSelectorQuery().selectAll('.introduction, .auditor').boundingClientRect().exec(function(res){
-      var introduction  = res[0][0].dataset.introduction;
-      var auditor = res[0][1].dataset.auditor;
-      wx.navigateTo({
-        url: '../introduction/introduction?novel_id='+e.currentTarget.dataset.id+'&title='+e.currentTarget.dataset.title+'&auditor='+auditor+'&introduction='+introduction,
-      })
+    wx.navigateTo({
+      url: '../introduction/introduction?novel_id='+e.currentTarget.dataset.id,
     })
   }
 })

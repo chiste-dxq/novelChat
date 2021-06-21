@@ -94,6 +94,7 @@
   width: 100%;
   display:-webkit-box;
   overflow:hidden;
+  text-indent: 2em;
   -webkit-line-clamp:3;
   -webkit-box-orient:vertical;
 }

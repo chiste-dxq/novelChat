@@ -46,3 +46,10 @@
   height: 70%;
   bottom: 0;
 }
+
+.other .introduction{
+  text-indent:2em;
+  font-size: smaller;
+  margin-left: 1em;
+  margin-right: 1em;
+}

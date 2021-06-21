@@ -3,11 +3,11 @@
     <image class='bookcover' src="../index/image.jpeg"></image>
   </view>
   <view class='right-in' data-id='{{novel_id}}'>
-    <span class='auditor'>作者：{{auditor}}</span>
+    <span class='auditor' bindtap="linkAuditor" data-auditor="{{auditor}}">作者：{{auditor}}</span>
     <span class='title'>书本状态：已完结</span>
   </view>
 </view>
 
 <view class='other'>
-  <text class='title'>{{introduction}}</text>
+  <text class='introduction'>{{introduction}}</text>
 </view>
