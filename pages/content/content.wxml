@@ -1,0 +1,8 @@
+<view class='main'>
+  <text class='content'>{{content.content}}</text>
+</view>
+<view class='footbar'>
+  <button>上一章</button>
+  <button>目录</button>
+  <button>下一章</button>
+</view>

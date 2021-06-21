@@ -1,0 +1,21 @@
+.main{
+  width: 100%;
+  padding: 1rem;
+  display: contents;
+}
+
+.content{
+  width: 80%;
+  margin: 1rem;
+  display: contents;
+  height: 70%
+}
+
+.footbar{
+  width: 80%;
+  margin: 1rem;
+}
+
+.foot_btn{
+  width: 25%;
+}

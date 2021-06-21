@@ -6,7 +6,7 @@ Page({
    */
   data: {
     currentIndex: 0,
-    topNavs:{}
+    topNavs:[]
   },
 
   onLoad: function(){
@@ -24,7 +24,10 @@ Page({
         console.log(res)//接口返回值
         that.setData({
           topNavs: res.data.data
-      })
+        })
+        wx.setNavigationBarTitle({
+          title: res.data.data[0].catName,
+        })
       }
     })
   },
@@ -41,11 +44,13 @@ Page({
   },
   //用户点击tab时调用
   titleClick: function (e) {
-    let currentPageIndex =
-      this.setData({
+    this.setData({
         //拿到当前索引并动态改变
         currentIndex: e.currentTarget.dataset.idx
       })
+    wx.setNavigationBarTitle({
+      title: e.currentTarget.dataset.title,
+    })
   },
   intoNovel: function (e){
     wx.navigateTo({

@@ -29,9 +29,14 @@
   width:90%;
   margin-left: 1em;
   margin-right: 1em;
-  margin: 1em;
-  font-size: smaller;
+  padding-bottom: 0.5em;
+  padding-top: 0.5em;
+  font-size: small;
   border-bottom: solid 1px rgb(199, 193, 193);
   display: inline-block;
   vertical-align: middle;
+}
+
+.chapter span:first-child {
+  color: rgb(236, 57, 57);
 }

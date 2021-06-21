@@ -1,13 +1,10 @@
 <view class='ticket-container'>
   <view class='topTitle'>
-    <span class='c_title' >{{chapters.title}}</span> 
-  </view>
-  <view class='topTitle'>
-    <span class='c_auditor'>作者：{{chapters.auditor}}</span>
+    <span class='c_auditor'>{{chapters.auditor}}</span>
   </view>
   <view class='chapter'>
     <block wx:for='{{chapters.contents}}'>
-      <span >{{item.chapter}}</span>
+      <span bindtap='chapterClick' data-id='{{item.id}}'>{{item.chapter}}</span>
     </block>
   </view>
 </view>
