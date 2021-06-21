@@ -1,21 +1,31 @@
 .main{
   width: 100%;
-  padding: 1rem;
-  display: contents;
+  display: fixed;
 }
 
 .content{
-  width: 80%;
-  margin: 1rem;
-  display: contents;
-  height: 70%
+  margin-left: 2em;
+  margin-right: 2em;
+  height: 90%;
+  overflow-y:scroll;
+  position:absolute;
 }
 
 .footbar{
-  width: 80%;
-  margin: 1rem;
+  align-content: center;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  padding-bottom: 1rem;
+  text-align: center;
 }
 
 .foot_btn{
   width: 25%;
+  margin: 0 1em 0 1em ;
+  color: rgb(116, 218, 255)
+}
+
+.foot_btn:hover{
+  color: rgb(42, 143, 180);
 }

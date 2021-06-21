@@ -1,0 +1,12 @@
+<view class='introduction'>
+  <view class='left-in'>
+    <span>测试1</span>
+  </view>
+  <view class='right-in'>
+    <span>测试2</span>
+  </view>
+</view>
+
+<view class='other'>
+
+</view>

@@ -1,0 +1,24 @@
+.introduction{
+  position: absolute;
+  width: 100%;
+  height: 40%;
+}
+
+.left-in{
+  position: absolute;
+  width: 50%;
+  right: 0;
+  text-align: center;
+}
+
+.right-in{
+  position: absolute;
+  width: 50%;
+  text-align: center;
+}
+
+.other{
+  position: absolute;
+  width: 100%;
+  height: 60%;
+}

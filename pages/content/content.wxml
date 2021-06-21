@@ -2,7 +2,7 @@
   <text class='content'>{{content.content}}</text>
 </view>
 <view class='footbar'>
-  <button>上一章</button>
-  <button>目录</button>
-  <button>下一章</button>
+  <span class="foot_btn" data-before='{{content.id-1}}' bindtap="beforeChapter">上一章</span>
+  <span class="foot_btn" bindtap="chapter">目录</span>
+  <span class="foot_btn" data-next='{{content.id+1}}' bindtap="nextChapter">下一章</span>
 </view>

@@ -54,7 +54,8 @@ Page({
   },
   intoNovel: function (e){
     wx.navigateTo({
-      url: '../chapter/chapter?novel_id='+e.currentTarget.dataset.id
+      // url: '../chapter/chapter?novel_id='+e.currentTarget.dataset.id
+      url: '../introduction/introduction'
     })
   }
 })
