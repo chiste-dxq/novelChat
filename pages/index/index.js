@@ -53,9 +53,12 @@ Page({
     })
   },
   intoNovel: function (e){
-    wx.navigateTo({
-      // url: '../chapter/chapter?novel_id='+e.currentTarget.dataset.id
-      url: '../introduction/introduction'
+    wx.createSelectorQuery().selectAll('.introduction, .auditor').boundingClientRect().exec(function(res){
+      var introduction  = res[0][0].dataset.introduction;
+      var auditor = res[0][1].dataset.auditor;
+      wx.navigateTo({
+        url: '../introduction/introduction?novel_id='+e.currentTarget.dataset.id+'&title='+e.currentTarget.dataset.title+'&auditor='+auditor+'&introduction='+introduction,
+      })
     })
   }
 })

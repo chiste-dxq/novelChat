@@ -1,12 +1,13 @@
 <view class='introduction'>
   <view class='left-in'>
-    <span>测试1</span>
+    <image class='bookcover' src="../index/image.jpeg"></image>
   </view>
-  <view class='right-in'>
-    <span>测试2</span>
+  <view class='right-in' data-id='{{novel_id}}'>
+    <span class='auditor'>作者：{{auditor}}</span>
+    <span class='title'>书本状态：已完结</span>
   </view>
 </view>
 
 <view class='other'>
-
+  <text class='title'>{{introduction}}</text>
 </view>

@@ -1,24 +1,48 @@
 .introduction{
   position: absolute;
   width: 100%;
-  height: 40%;
+  height: 30%;
 }
 
 .left-in{
   position: absolute;
-  width: 50%;
-  right: 0;
+  width: 40%;
+  left: 0;
   text-align: center;
+  margin-top: 1rem;
+}
+
+.left-in .bookcover{
+  width: 6rem;
+  height: 8rem;
 }
 
 .right-in{
   position: absolute;
-  width: 50%;
-  text-align: center;
+  width: 60%;
+  right: 0;
+  text-align: left;
+  height: 40%;
+  margin-top: 1rem;
+}
+
+.right-in .title{
+  font-size: smaller;
+  width:95%;
+  display: block;
+}
+
+.right-in .auditor{
+  font-size: smaller;
+  width:95%;
+  display: block;
+  text-decoration-line: underline;
+  color: rgb(247, 91, 99)
 }
 
 .other{
   position: absolute;
   width: 100%;
-  height: 60%;
+  height: 70%;
+  bottom: 0;
 }

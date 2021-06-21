@@ -22,8 +22,8 @@
                 <span class='cover' id='{{item.id}}'><image src='{{item.img}}' ></image></span>
                 <view class='item'>
                   <span class='title' bindtap='intoNovel' data-id='{{item.id}}' data-title='{{item.title}}'>{{item.title}}</span>
-                  <text class='introduction'>{{item.introduction}}</text>
-                  <span class='auditor'>作者：{{item.auditor}}</span>
+                  <text class='introduction' data-introduction='{{item.introduction}}'>{{item.introduction}}</text>
+                  <span class='auditor' data-auditor='{{item.auditor}}'>作者：{{item.auditor}}</span>
                 </view>
               </view>
           </view>
