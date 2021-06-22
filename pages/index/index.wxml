@@ -1,6 +1,6 @@
 <view class='ticket-container'>
   <scroll-view bindscrolltoupper="upper" bindscrolltolower="lower" bindscroll="scroll" 
-    scroll-into-view="{{toView}}" scroll-top="{{scrollTop}}">
+    scroll-into-view="{{toView}}" scroll-top="{{scrollTop}}" style="height:100%">
     <!--Tab布局-->
     <view class='title'>
       <block wx:for="{{topNavs}}">

@@ -1,22 +1,18 @@
 Page({
 
   data:{
+    novel_id: null,
     chapter_id: null,
-    content: {},
-    navigationBarTitleText: null
+    content: {}
   },
-  onUnload: function () {
-    wx.reLaunch({
-      url: '/pages/homepage/index'
-    })
-    },
   onLoad:function(options){
     var that = this;
     that.setData({
-      chapter_id: options.chapter_id
+      chapter_id: options.chapter_id,
+      novel_id: options.novel_id
     })
     wx.request({
-      url: 'http://localhost:8930/api/novelContent/getContentById?id='+that.data.chapter_id,
+      url: 'http://localhost:8930/api/novelContent/getContentById?id='+that.data.novel_id+'&chapterId='+(that.data.chapter_id==null?0:that.data.chapter_id),
       header: {
         'content-type': 'application/json',
         'Token':'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VyQ29kZSI6ImFkbWluIn0.bSqexWHLzwANUQ_nSj14ojV33xD2UReU8-zcDAJxn4Q'
@@ -35,8 +31,9 @@ Page({
     })
   },
   beforeChapter: function(e){
+    var that = this;
     wx.navigateTo({
-      url: '../content/content?chapter_id='+e.currentTarget.dataset.before,
+      url: '../content/content?novel_id='+that.data.content.novelId+'&chapter_id='+e.currentTarget.dataset.before,
     })
   },
   chapter: function(e){
@@ -46,8 +43,9 @@ Page({
     })
   },
   nextChapter: function(e){
+    var that = this;
     wx.navigateTo({
-      url: '../content/content?chapter_id='+e.currentTarget.dataset.next,
+      url: '../content/content?novel_id='+that.data.content.novelId+'&chapter_id='+e.currentTarget.dataset.next,
     })
   }
 })

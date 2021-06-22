@@ -4,10 +4,16 @@
   </view>
   <view class='right-in' data-id='{{novel_id}}'>
     <span class='auditor' bindtap="linkAuditor" data-auditor="{{auditor}}">作者：{{auditor}}</span>
-    <span class='title'>书本状态：已完结</span>
+    <span class='title'>最新章节：第{{chapterNum}}章</span>
+    <span class='title'>书本状态：{{novelStatus}}</span>
+    <span class='title'>完结时间：{{createTime}}</span>
   </view>
 </view>
 
 <view class='other'>
-  <text class='introduction'>{{introduction}}</text>
+  <text class='intro'>{{introduction}}</text>
+  <view class='btn_group'>
+    <span class='begin' data-id='{{novel_id}}' bindtap="openNovel" >开始阅读</span>
+    <span class='chapter' data-id='{{novel_id}}'  bindtap="intoChapter">章节目录</span>
+  </view>
 </view>

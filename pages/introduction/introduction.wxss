@@ -22,18 +22,19 @@
   width: 60%;
   right: 0;
   text-align: left;
-  height: 40%;
   margin-top: 1rem;
 }
 
 .right-in .title{
-  font-size: smaller;
+  font-size: 30rpx;
+  padding-top: 1em;
   width:95%;
   display: block;
 }
 
 .right-in .auditor{
-  font-size: smaller;
+  font-size: 30rpx;
+  padding-top: 1em;
   width:95%;
   display: block;
   text-decoration-line: underline;
@@ -42,14 +43,44 @@
 
 .other{
   position: absolute;
-  width: 100%;
+  width: 95%;
   height: 70%;
   bottom: 0;
+  margin-left: 1em;
+  margin-right: 1em;
+  font-size: smaller;
 }
 
-.other .introduction{
+.other .intro{
   text-indent:2em;
-  font-size: smaller;
+}
+
+.btn_group{
+  position: fixed;
+  width: 100%;
+  text-align: center;
+}
+
+.begin{
+  width: 50rpx;
+  height: 40rpx;
+  background-color: rgb(37, 161, 141);
+  color: white;
+  vertical-align: middle;
+  text-align: center;
+  padding: 0.5rem;
+  margin-left: 1em;
+  margin-right: 1em;
+}
+
+.chapter{
+  width: 50rpx;
+  height: 40rpx;
+  background-color: rgb(37, 161, 141);
+  color: white;
+  vertical-align: middle;
+  text-align: center;
+  padding: 0.5rem;
   margin-left: 1em;
   margin-right: 1em;
 }

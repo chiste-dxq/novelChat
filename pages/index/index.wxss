@@ -49,8 +49,9 @@
  
 .swiper {
   width: 90%;
+  height: 78%;
   flex: 1;
-  overflow-y: scroll;
+  overflow-y: auto;
   margin: 0 auto;
 }
  

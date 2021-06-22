@@ -5,10 +5,16 @@ Page({
     novel_id:null,
     introduction:null,
     auditor:null,
+    chapterNum:null,
+    novelStatus:null,
+    createTime:null,
   },
 
   onLoad: function(options){
     var that = this;
+    that.setData({
+      novel_id: options.novel_id
+    })
     wx.request({
       url: 'http://localhost:8930/api/novel/getNovelDetail?id='+options.novel_id,
       header: {
@@ -23,11 +29,26 @@ Page({
           title:res.data.data.title,
           introduction:res.data.data.introduction,
           auditor:res.data.data.auditor,
+          chapterNum:res.data.data.chapterNum,
+          novelStatus:res.data.data.novelStatus,
+          createTime:res.data.data.createTime,
         })
         wx.setNavigationBarTitle({
           title: res.data.data.title,
         })
       }
+    })
+  },
+
+  openNovel: function(e){
+    wx.navigateTo({
+      url: '../content/content?novel_id='+e.currentTarget.dataset.id
+    })
+  },
+
+  intoChapter: function(e){
+    wx.navigateTo({
+      url: '../chapter/chapter?novel_id='+e.currentTarget.dataset.id
     })
   },
 
