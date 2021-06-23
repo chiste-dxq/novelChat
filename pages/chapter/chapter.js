@@ -30,8 +30,9 @@ Page({
     })
   },
   chapterClick: function(e){
+    var that = this;
     wx.navigateTo({
-      url: '../content/content?chapter_id='+e.currentTarget.dataset.id,
+      url: '../content/content?chapter_id='+e.currentTarget.dataset.id+'&novel_id='+that.data.novel_id,
     })
   }
 })
