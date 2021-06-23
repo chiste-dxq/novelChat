@@ -50,7 +50,7 @@ Page({
   },
   onUnload: function(e){
     var that = this;
-    wx.redirectTo({
+    wx.navigateTo({
       url: '../introduction/introduction?novel_id='+that.data.novel_id,
     })
   }

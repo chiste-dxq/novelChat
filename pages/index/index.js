@@ -41,11 +41,11 @@ Page({
   },
   intoNovel: function (e){ 
     wx.navigateTo({ 
-      url: '../introduction/introduction?novel_id='+e.currentTarget.dataset.id, 
+      url: '../introduction/introduction?novel_id='+e.currentTarget.dataset.id+'&current='+this.data.currentIndex, 
     }) 
   },
-  onLoad: function() { 
-    var that = this; 
+  onLoad: function(options) { 
+    var that = this;
     // 高度自适应
     wx.getSystemInfo({ 
       success: function(res) { 
@@ -54,7 +54,8 @@ Page({
           rpxR = 750/clientWidth;
         var calc = clientHeight*rpxR-180;
         that.setData( { 
-          winHeight: calc
+          winHeight: calc,
+          currentIndex: options.current
         }); 
       }
     });
