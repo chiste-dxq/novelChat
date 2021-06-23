@@ -12,8 +12,8 @@
 
 <view class='other'>
   <text class='intro'>{{introduction}}</text>
-  <view class='btn_group'>
-    <span class='begin' data-id='{{novel_id}}' bindtap="openNovel" >开始阅读</span>
-    <span class='chapter' data-id='{{novel_id}}'  bindtap="intoChapter">章节目录</span>
-  </view>
+</view>
+<view class='btn_group'>
+  <span class='begin' data-id='{{novel_id}}' bindtap="openNovel" >开始阅读</span>
+  <span class='begin' data-id='{{novel_id}}'  bindtap="intoChapter">章节目录</span>
 </view>

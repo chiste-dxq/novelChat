@@ -29,3 +29,24 @@
 .foot_btn:hover{
   color: rgb(42, 143, 180);
 }
+
+.btn_group{
+  display: flex;
+  position: fixed;
+  width: 100%;
+  text-align: center;
+  bottom: 0;
+  height: 80rpx;
+}
+
+.begin{
+  position: relative;
+  width: 50%;
+  height: 40rpx;
+  border: solid 1px lightblue;
+  background-color: rgb(37, 161, 141);
+  color: white;
+  vertical-align: middle;
+  text-align: center;
+  padding: 20rpx;
+}

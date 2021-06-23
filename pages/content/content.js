@@ -47,5 +47,11 @@ Page({
     wx.navigateTo({
       url: '../content/content?novel_id='+that.data.content.novelId+'&chapter_id='+e.currentTarget.dataset.next,
     })
+  },
+  onUnload: function(e){
+    var that = this;
+    wx.redirectTo({
+      url: '../introduction/introduction?novel_id='+that.data.novel_id,
+    })
   }
 })

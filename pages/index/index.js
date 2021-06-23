@@ -22,6 +22,9 @@ Page({
         currentIndex:cur
       })
     }
+    wx.setNavigationBarTitle({
+      title: e.currentTarget.dataset.title,
+    })
   },
   //判断当前滚动超过一屏时，设置tab标题滚动条。
   checkCor:function(e){
