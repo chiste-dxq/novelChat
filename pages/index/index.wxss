@@ -1,52 +1,90 @@
-
-.ticket-container {
-  height: 100%;
-  min-height: 100%;
-  display: flex;
-  flex-direction: column;
+.tab-h{
+  height: 80rpx;
+  width: 100%; 
   box-sizing: border-box;
+  overflow: hidden;
+  line-height: 80rpx;
+  background: #F7F7F7; 
+  font-size: 30rpx; 
+  white-space: nowrap;
+  position: fixed;
+  top: 0; 
+  left: 0; 
+  z-index: 99;
 }
-
-.title {
+.tab-item{
+  margin:0 36rpx;
+  display: inline-block;
+  font-size: 30rpx;
+}
+.tab-item.active{
+  color: #4675F9;
+  position: relative;
+}
+.tab-item.active:after{ 
+  content: "";
+  display: block;
+  height: 8rpx;
   width: 100%;
-  height: 88rpx;
-  background: white;
-  display: flex;
+  background: #4675F9;
+  position: absolute; 
+  bottom: 0;
+  border-radius: 16rpx;}
+.item-ans{ 
+  width: 100%;
+  display: flex; 
+  flex-grow: row no-wrap;
+  justify-content: space-between; 
+  padding: 30rpx;
+  box-sizing: border-box; 
+  height: 180rpx;
   align-items: center;
-  justify-content: space-around;
+  border-bottom: 1px solid #F2F2F2;
 }
- 
-.title-sel {
-  color: #24272c;
-  font-size: 32rpx;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+.avatar{
+  width: 100rpx;
+  height: 100rpx;
+  position: relative;
+  padding-right: 30rpx;
 }
- 
-.title-sel  .line-style{
-  background: #fff;
-  height: 6rpx;
+.avatar .img{
+  width: 100%;
+  height: 100%;
+}
+.avatar .doyen{
   width: 40rpx;
-  position: relative;
-  margin-top: 10rpx;
+  height: 40rpx;
+  position: absolute;
+  bottom: -2px;
+  right: 20rpx;
 }
- 
-.title-sel-selected{
-  color: #006bff;
-  font-size: 32rpx;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+.expertInfo{
+  font-size: 12px;
+  flex-grow: 2;
+  color: #B0B0B0;
+  line-height: 1.5em;
 }
-.title-sel-selected .line-style{
-  background: #006bff;
-  height: 6rpx;
-  width: 90rpx;
-  position: relative;
-  margin-top: 10rpx;
+.expertInfo .name{
+  font-size: 16px;
+  color:#000;
+  margin-bottom: 6px;
 }
- 
+.askBtn{ 
+  width: 120rpx;
+  height: 60rpx;
+  line-height: 60rpx;
+  text-align: center;
+  font-size: 14px; 
+  border-radius: 60rpx;
+  border: 1px solid #4675F9; 
+  color:#4675F9;
+}
+.tab-content{
+  margin-top: 80rpx;
+}
+.scoll-h{
+  height: 100%;
+}
 .swiper {
   width: 90%;
   height: 78%;
@@ -54,7 +92,6 @@
   overflow-y: auto;
   margin: 0 auto;
 }
- 
 .record-item {
   margin-top: 10rpx;
   background-color: white;
@@ -62,7 +99,6 @@
   padding-top: 5rpx;
   font-size: 30rpx;
 }
- 
 .name{
   display: flex;
   justify-content: space-between;
@@ -70,27 +106,23 @@
   padding: 2vh;
   border-radius: 10rpx;
 }
-
 .cover{
   background-size: contain;
   display: inline-block;
   width: 20%;
   height: 200rpx;
 }
-
 .item{
   width: 75%;
   padding: 0;
   border: none;
 }
-
 .item .title{
   color:rgb(42, 131, 248);
   text-decoration-line: underline;
   width: 100%;
   text-align: left;
 }
-
 .item .introduction{
   width: 100%;
   display:-webkit-box;
@@ -99,12 +131,10 @@
   -webkit-line-clamp:3;
   -webkit-box-orient:vertical;
 }
-
 .item .auditor{
   width: 100%;
   color: rgb(248, 42, 87)
 }
-
 swiper-item{
   height:100%;
   overflow-y:scroll;

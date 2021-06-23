@@ -1,35 +1,26 @@
-<view class='ticket-container'>
-  <scroll-view bindscrolltoupper="upper" bindscrolltolower="lower" bindscroll="scroll" 
-    scroll-into-view="{{toView}}" scroll-top="{{scrollTop}}" style="height:100%">
-    <!--Tab布局-->
-    <view class='title'>
-      <block wx:for="{{topNavs}}">
-        <view class="tab-item {{currentIndex == index ? 'title-sel-selected' : 'title-sel'}}" bindtap='titleClick'
-          data-idx='{{index}}' data-title='{{item.catName}}'>
-          <text>{{item.catName}}</text>
-          <hr class="line-style" />
-        </view>
-      </block>
-    </view>
-
-    <!--内容布局-->
-    <swiper class='swiper' bindchange='pagechange' current='{{currentIndex}}'>
-      <block wx:for="{{topNavs}}">
-        <swiper-item >
-          <block wx:for='{{item.novelListReqVo}}'>
+<view >
+  <scroll-view scroll-x="true" class="tab-h" scroll-left="{{scrollLeft}}">
+  <block wx:for="{{topNavs}}">
+    <view class="tab-item {{currentIndex == index ? 'active':''}}" bindtap="swichNav" data-current="{{index}}" data-title='{{item.catName}}'>{{item.catName}}</view>
+  </block>
+  </scroll-view>
+  <swiper class="tab-content" current="{{currentIndex}}" duration="300" bindchange="switchTab"
+   style="height:{{winHeight}}rpx">
+    <swiper-item wx:for="{{topNavs}}">
+      <scroll-view scroll-y="true" class="scoll-h" >
+        <block wx:for="{{item.novelListReqVo}}" wx:key="*this">
           <view class='record-item'>
-              <view class='name'>
-                <span class='cover' id='{{item.id}}'><image src='{{item.img}}' ></image></span>
-                <view class='item'>
-                  <span class='title' bindtap='intoNovel' data-id='{{item.id}}' data-title='{{item.title}}'>{{item.title}}</span>
-                  <view class='introduction' data-introduction='{{item.introduction}}'>{{item.introduction}}</view>
-                  <span class='auditor' data-auditor='{{item.auditor}}'>作者：{{item.auditor}}</span>
-                </view>
+            <view class='name'>
+              <span class='cover' id='{{item.id}}'><image src='{{item.img}}' ></image></span>
+              <view class='item'>
+                <span class='title' bindtap='intoNovel' data-id='{{item.id}}' data-title='{{item.title}}'>{{item.title}}</span>
+                <view class='introduction' data-introduction='{{item.introduction}}'>{{item.introduction}}</view>
+                <span class='auditor' data-auditor='{{item.auditor}}'>作者：{{item.auditor}}</span>
               </view>
+            </view>
           </view>
         </block>
-        </swiper-item>
-      </block>
-    </swiper>
-  </scroll-view>
+      </scroll-view>
+    </swiper-item>
+  </swiper>
 </view>

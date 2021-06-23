@@ -12,7 +12,7 @@ Page({
       novel_id: options.novel_id
     })
     wx.request({
-      url: 'http://www.chiste.com:8930/api/novelContent/getContentById?id='+that.data.novel_id+'&chapterId='+(that.data.chapter_id==null?0:that.data.chapter_id),
+      url: 'http://localhost:8930/api/novelContent/getContentById?id='+that.data.novel_id+'&chapterId='+(that.data.chapter_id==null?0:that.data.chapter_id),
       header: {
         'content-type': 'application/json',
         'Token':'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VyQ29kZSI6ImFkbWluIn0.bSqexWHLzwANUQ_nSj14ojV33xD2UReU8-zcDAJxn4Q'

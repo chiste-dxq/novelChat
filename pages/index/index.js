@@ -1,16 +1,60 @@
-// pages/mine/mine.js
+var app = getApp();
 Page({
- 
-  /**
-   * 页面的初始数据
-   */
-  data: {
-    currentIndex: 0,
+  data:{
+    winHeight:"",//窗口高度
+    currentIndex:0, //预设当前项的值
+    scrollLeft:0, //tab标题的滚动条位置
     topNavs:[]
   },
-
-  onLoad: function(){
+  // 滚动切换标签样式
+  switchTab: function(e){
+    this.setData({
+      currentIndex:e.detail.current
+    });
+    this.checkCor(e);
+  },
+  // 点击标题切换当前页时改变样式
+  swichNav: function(e){
+    var cur=e.target.dataset.current;
+    if(this.data.currentIndex==cur){return false;}
+    else{
+      this.setData({
+        currentIndex:cur
+      })
+    }
+  },
+  //判断当前滚动超过一屏时，设置tab标题滚动条。
+  checkCor:function(e){
     var that = this;
+    if (that.data.currentIndex>4){
+      that.setData({
+        scrollLeft: 300
+      })
+    }else{
+      that.setData({
+        scrollLeft:0
+      })
+    }
+  },
+  intoNovel: function (e){ 
+    wx.navigateTo({ 
+      url: '../introduction/introduction?novel_id='+e.currentTarget.dataset.id, 
+    }) 
+  },
+  onLoad: function() { 
+    var that = this; 
+    // 高度自适应
+    wx.getSystemInfo({ 
+      success: function(res) { 
+        var clientHeight = res.windowHeight,
+          clientWidth = res.windowWidth,
+          rpxR = 750/clientWidth;
+        var calc = clientHeight*rpxR-180;
+        that.setData( { 
+          winHeight: calc
+        }); 
+      }
+    });
     wx.request({
       url: 'http://localhost:8930/api/novelCat/queryNovelCat',
       header: {
@@ -30,30 +74,5 @@ Page({
       }
     })
   },
- 
-  //swiper切换时会调用
-  pagechange: function (e) {
-    if ("touch" === e.detail.source) {
-      let currentPageIndex = this.data.currentIndex
-      currentPageIndex = (currentPageIndex + 1) % 3
-      this.setData({
-        currentIndex: currentPageIndex
-      })
-    }
-  },
-  //用户点击tab时调用
-  titleClick: function (e) {
-    this.setData({
-        //拿到当前索引并动态改变
-        currentIndex: e.currentTarget.dataset.idx
-      })
-    wx.setNavigationBarTitle({
-      title: e.currentTarget.dataset.title,
-    })
-  },
-  intoNovel: function (e){
-    wx.navigateTo({
-      url: '../introduction/introduction?novel_id='+e.currentTarget.dataset.id,
-    })
-  }
+  footerTap:app.footerTap
 })

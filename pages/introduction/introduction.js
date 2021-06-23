@@ -1,13 +1,13 @@
 Page({
 
   data:{
-    title:null,
-    novel_id:null,
-    introduction:null,
-    auditor:null,
-    chapterNum:null,
-    novelStatus:null,
-    createTime:null,
+    title:'',
+    novel_id:'',
+    introduction:'',
+    auditor:'',
+    chapterNum:'',
+    novelStatus:'',
+    createTime:'',
   },
 
   onLoad: function(options){
